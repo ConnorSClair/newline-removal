@@ -2,20 +2,11 @@ function textSubmission() {
     var text = document.getElementById("textInput").value
     parseSubmission(text)
 }
-
-function parseSubmissionOld(text) {
-    var result = []
-    for (i = 0; i < text.length; i++) {
-        if (text.charAt(i) === '\n') {
-            result.push(" ")
-        }
-        else {
-            result.push(text.charAt(i))
-        }
-    }       
-    document.getElementById("textOutput").value = result.join("");
-}
-
+/**
+ * takes a text string and replaces single newlines with spaces and
+ * multiple newlines with two newlines (a paragraph)
+ * @param {*} text 
+ */
 function parseSubmission(text) {
     var result = []
     var i = 0;
@@ -46,29 +37,15 @@ function parseParagraph(text, i) {
     return count
 }
 
-
-/**
- * boop app tap
- * loop cap 
- * 
- * snoop
- * boop app tap\nloop cap\n\n snoop
- * -> 
- * 
- * boop app tap loop cap
- * 
- * snoop
- * -
- * loop cap
- * 
- * 
- * 
- * snoop 
- * ->
- * loop cap 
- * 
- * snoop
- * 
- * or 
- * loop cap\n\n\n\nsnoop -> loop cap\n\nsnoop
- */
+function parseSubmissionOld(text) {
+    var result = []
+    for (i = 0; i < text.length; i++) {
+        if (text.charAt(i) === '\n') {
+            result.push(" ")
+        }
+        else {
+            result.push(text.charAt(i))
+        }
+    }       
+    document.getElementById("textOutput").value = result.join("");
+}
