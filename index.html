@@ -10,9 +10,11 @@
 </head>
 <body>
     <h1>Newline Removal App</h1>
-    <p>Copy-pasting from some pdf documents can lead to a bunch of annoying new-lines. Enter text below and hit submit to replace newlines with spaces. Note that paragraphs are retained.</p>
-    <textarea id = "textInput"></textarea>
-    <button id = "submitButton" onclick = "textSubmission()">Submit</button>
-    <textarea id = "textOutput" readonly = true></textarea>
+    <p>Copy-pasting from some pdf documents can lead to a bunch of annoying new-lines. Paste text in the area below to replace newlines with spaces. Note that paragraphs are retained.</p>
+    <textarea id = "textInput" autofocus = true cols = 60 rows = 10 placeholder = "Paste Here..."></textarea>
+    <textarea id = "textOutput" readonly = true cols = 60 rows = 10></textarea>
+    <script>
+    setUp()
+    </script>
 </body>
 </html>

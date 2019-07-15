@@ -1,7 +1,11 @@
-function textSubmission() {
-    var text = document.getElementById("textInput").value
-    parseSubmission(text)
+
+
+function setUp() {
+document.getElementById("textInput").onpaste = function(event) {
+    parseSubmission(event.clipboardData.getData('text/plain'))
+    }
 }
+
 /**
  * takes a text string and replaces single newlines with spaces and
  * multiple newlines with two newlines (a paragraph)
